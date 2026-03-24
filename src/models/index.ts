@@ -1,0 +1,16 @@
+export { Counter } from "./Counter";
+export { Attendance, IAttendance } from "./Attendance";
+export { ClassRoom, IClassRoom } from "./ClassRoom";
+export { Course, ICourse } from "./Course";
+export { Department, IDepartment } from "./Department";
+export { Employee, IEmployee } from "./Employee";
+export { Exam, IExam } from "./Exam";
+export { ExamMark, IExamMark } from "./ExamMark";
+export { Expense, IExpense } from "./Expense";
+export { Notice, INotice } from "./Notice";
+export { Parent, IParent } from "./Parent";
+export { Payment, IPayment } from "./Payment";
+export { Routine, IRoutine } from "./Routine";
+export { Student, IStudent } from "./Student";
+export { Teacher, ITeacher } from "./Teacher";
+export { User, IUser } from "./User";
