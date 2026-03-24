@@ -17,7 +17,7 @@ app.use(
   cors({
     origin:
       env.NODE_ENV === "production"
-        ? ["https://yourdomain.com"] // Replace with your production domain
+        ? ["https://campusbaba.onrender.com"] // Replace with your production domain
         : true, // Allow all origins in development
     credentials: true,
   }),
