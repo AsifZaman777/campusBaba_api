@@ -10,11 +10,16 @@ import {
 
 export const createAttendance = asyncHandler(
   async (req: Request, res: Response) => {
-    const attendance = await Attendance.create(req.body);
+    const { studentId, classRoomId, date } = req.body;
+    const attendance = await Attendance.findOneAndUpdate(
+      { studentId, classRoomId, date: new Date(date) },
+      req.body,
+      { upsert: true, new: true, runValidators: true },
+    );
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
-      message: "Attendance marked successfully",
+      message: "Attendance saved successfully",
       data: attendance,
     });
   },
