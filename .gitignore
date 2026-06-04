@@ -7,4 +7,5 @@ coverage/
 .vscode/
 .idea/
 .env*
+.env.local
 .npm-cache*
