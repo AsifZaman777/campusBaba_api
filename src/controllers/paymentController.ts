@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { Request, Response } from "express";
 import { Payment } from "../models/Payment";
 import { Student } from "../models/Student";
+import { nextSequence } from "../models/Counter";
 import { asyncHandler } from "../middlewares/asyncHandler";
 import { AppError } from "../middlewares/errorHandler";
 import {
@@ -11,7 +12,9 @@ import {
 
 export const createPayment = asyncHandler(
   async (req: Request, res: Response) => {
-    const payment = await Payment.create(req.body);
+    const seq = await nextSequence("payment");
+    const paymentId = `PAY-${String(seq).padStart(4, "0")}`;
+    const payment = await Payment.create({ ...req.body, paymentId });
 
     res.status(201).json({
       success: true,
